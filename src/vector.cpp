@@ -53,3 +53,17 @@ Vector Vector::operator*(const double& k) {
 
   return vector_c;
 };
+
+
+/*
+ * Returns a new vector with scalar division 
+ */
+Vector Vector::operator/(const double& k) {
+  size_t size = vector_a.size();
+
+  Vector vector_c(size);
+  for (size_t idx = 0; idx < size; idx++) 
+    vector_c[idx] = vector_a[idx] / k;
+
+  return vector_c;
+};

@@ -13,11 +13,12 @@ class Vector{
     void print();
     size_t size();
 
-    // OPERATORS
+    /* OPERATORS */
     double& operator[](size_t idx) { return vector_a.at(idx);}
     const double& operator[](size_t idx) const { return vector_a.at(idx);}
 
     Vector operator+(Vector vector_b);
     Vector operator-(Vector vector_b);
     Vector operator*(const double& k);
+    Vector operator/(const double& k);
 };

@@ -40,6 +40,8 @@ public:
   void self_transpose();
 
   double determinant();
+  Matrix inverse();
+  void self_inverse();
 
   /* OPERATORS */
   Vector &operator[](size_t idx) { return matrix_a.at(idx); };
@@ -49,5 +51,7 @@ public:
   Matrix operator-(Matrix &matrix_b);
   Matrix operator*(Matrix &matrix_b);
   Matrix operator*(const double &k);
+  Matrix operator/(const double &k);
+  bool operator==(Matrix &matrix_b);
   Vector operator*(Vector &vector);
 };
