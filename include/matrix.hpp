@@ -3,6 +3,8 @@
 #include <vector.hpp>
 #include <vector>
 
+static double THRESHOLD = 1.0e-30;
+
 class Matrix {
 private:
   std::vector<Vector> matrix_a;
@@ -34,11 +36,17 @@ public:
   size_t row_count();
   size_t col_count();
 
+  Matrix transpose();
+  void self_transpose();
+
+  double determinant();
+
   /* OPERATORS */
   Vector &operator[](size_t idx) { return matrix_a.at(idx); };
   const Vector &operator[](size_t idx) const { return matrix_a.at(idx); };
 
   Matrix operator+(Matrix &matrix_b);
+  Matrix operator-(Matrix &matrix_b);
   Matrix operator*(Matrix &matrix_b);
   Matrix operator*(const double &k);
   Vector operator*(Vector &vector);

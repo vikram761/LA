@@ -18,5 +18,6 @@ class Vector{
     const double& operator[](size_t idx) const { return vector_a.at(idx);}
 
     Vector operator+(Vector vector_b);
+    Vector operator-(Vector vector_b);
     Vector operator*(const double& k);
 };
